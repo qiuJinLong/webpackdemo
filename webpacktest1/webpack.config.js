@@ -1,10 +1,11 @@
 var webpack = require("webpack");
 var htmlWebpackPlugin = require("html-webpack-plugin");
+var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
 	entry: __dirname+"/src/scripts/app",
 	output:{
 		path:__dirname+"/build",
-		filename:"scripts/[name]-[hash]"
+		filename:"scripts/[name]-[hash].js"
 	},
 	module: {
 		loaders: [
@@ -27,6 +28,11 @@ module.exports = {
 			*/
 			filename: "views/index.html",  
 			template:__dirname+"/src/views/index.html"
+		}),
+		new uglifyJsPlugin({
+			compress: {
+				warnings: false
+			}
 		})
 	],
 	resolve: {
