@@ -1,1 +1,3 @@
 /webpacktest1/*.log
+/webpacktest1/build/
+/webpacktest1/node_modules/

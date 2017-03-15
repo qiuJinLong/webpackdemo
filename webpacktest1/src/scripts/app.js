@@ -1,3 +1,5 @@
+var $ = require("jquery");
 var index = require("./index");
-require("../stylesheets/index");
 index.fn("init index");
+console.log("app jquery:", $);
+require("../stylesheets/app.less");
